@@ -1,2 +1,90 @@
-<h1> Bonjour internet !<h1>
-<a href="https://norarss.github.io/Mémoire_pdf.html">Ma super étude !</a>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio Universitaire</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #cfe2f3;
+            margin: 0;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 2em;
+            margin: 0;
+            border-bottom: 2px solid #000;
+            display: inline-block;
+        }
+
+        header p {
+            max-width: 400px;
+            text-align: right;
+        }
+
+        h2 {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .project {
+            background-color: #fff;
+            border: 1px solid #000;
+            border-radius: 15px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @media (max-width: 800px) {
+            .projects {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .projects {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>NOM Prénom</h1>
+    <p>Etudiant en Master 2 d’Economie de l’Entreprise et des Marchés à l’Université pour devenir Data Analyst</p>
+</header>
+
+<h2>Mes Projets universitaires :</h2>
+
+<div class="projects">
+    <div class="project">Projet 1</div>
+    <div class="project">Projet 2</div>
+    <div class="project">Projet 3</div>
+    <div class="project">Projet 4</div>
+    <div class="project">Projet 5</div>
+    <div class="project">Projet 6</div>
+    <div class="project">Projet 7</div>
+    <div class="project">Projet 8</div>
+</div>
+
+</body>
+</html>
+
