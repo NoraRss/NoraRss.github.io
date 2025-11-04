@@ -6,59 +6,84 @@
     <title>Mon Portfolio Universitaire</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #cfe2f3;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background-color: #f4f8fc;
             margin: 0;
-            padding: 20px;
+            padding: 40px;
+            color: #333;
         }
 
         header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 40px;
+            text-align: center;
+            margin-bottom: 50px;
         }
 
         header h1 {
             font-size: 2em;
             margin: 0;
-            border-bottom: 2px solid #000;
-            display: inline-block;
+            color: #1a3c6e;
         }
 
         header p {
-            max-width: 400px;
-            text-align: right;
+            font-size: 1.1em;
+            margin-top: 10px;
+            color: #444;
         }
 
         h2 {
+            text-align: center;
             font-style: italic;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+            color: #1a3c6e;
         }
 
         .projects {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            justify-content: center;
         }
 
         .project {
             background-color: #fff;
-            border: 1px solid #000;
             border-radius: 15px;
-            height: 100px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.2s ease, box-shadow 0.3s ease;
         }
 
-        @media (max-width: 800px) {
+        .project:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .project img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-bottom: 2px solid #eaeaea;
+        }
+
+        .project h3 {
+            margin: 15px 0 10px 0;
+            font-size: 1.2em;
+            color: #1a3c6e;
+        }
+
+        .project p {
+            font-size: 0.95em;
+            padding: 0 15px 20px;
+            color: #555;
+        }
+
+        @media (max-width: 900px) {
             .projects {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
 
-        @media (max-width: 500px) {
+        @media (max-width: 600px) {
             .projects {
                 grid-template-columns: 1fr;
             }
@@ -69,20 +94,53 @@
 
 <header>
     <h1>NOM Prénom</h1>
-    <p>Etudiant en Master 2 d’Economie de l’Entreprise et des Marchés à l’Université pour devenir Data Analyst</p>
+    <p>Étudiante en Master 2 Économie de l’Entreprise et des Marchés — en formation pour devenir Data Analyst</p>
 </header>
 
-<h2>Mes Projets universitaires :</h2>
+<h2>Mes Projets Universitaires</h2>
 
 <div class="projects">
-    <div class="project">Projet 1</div>
-    <div class="project">Projet 2</div>
-    <div class="project">Projet 3</div>
-    <div class="project">Projet 4</div>
-    <div class="project">Projet 5</div>
-    <div class="project">Projet 6</div>
-    <div class="project">Projet 7</div>
-    <div class="project">Projet 8</div>
+    <div class="project">
+        <img src="projet1.jpg" alt="Analyse de marché">
+        <h3>Analyse de marché</h3>
+        <p>Étude de la demande et des tendances du marché pour identifier des opportunités stratégiques.</p>
+    </div>
+
+    <div class="project">
+        <img src="projet2.jpg" alt="Prévision des ventes">
+        <h3>Prévision des ventes</h3>
+        <p>Utilisation de modèles statistiques pour estimer les ventes futures et soutenir la prise de décision.</p>
+    </div>
+
+    <div class="project">
+        <img src="projet3.jpg" alt="Étude de la concurrence">
+        <h3>Étude de la concurrence</h3>
+        <p>Analyse des stratégies des concurrents et évaluation de leur positionnement sur le marché.</p>
+    </div>
+
+    <div class="project">
+        <img src="projet4.jpg" alt="Campagne publicitaire">
+        <h3>Campagne publicitaire</h3>
+        <p>Conception et suivi d’une campagne publicitaire en ligne fondée sur les données comportementales.</p>
+    </div>
+
+    <div class="project">
+        <img src="projet5.jpg" alt="Analyse de données">
+        <h3>Analyse de données</h3>
+        <p>Nettoyage, traitement et interprétation de données issues de multiples sources économiques.</p>
+    </div>
+
+    <div class="project">
+        <img src="projet6.jpg" alt="Étude de satisfaction">
+        <h3>Étude de satisfaction</h3>
+        <p>Évaluation de la satisfaction des clients et recommandations d’améliorations basées sur les retours.</p>
+    </div>
+
+    <div class="project">
+        <img src="projet7.jpg" alt="Optimisation des ventes">
+        <h3>Optimisation des ventes</h3>
+        <p>Identification des facteurs clés de performance et mise en place de stratégies de croissance.</p>
+    </div>
 </div>
 
 </body>
