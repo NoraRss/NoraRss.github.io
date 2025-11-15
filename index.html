@@ -1,167 +1,215 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ROUSSEAU Nora</title>
-    <style>
-        body {
-            font-family: "Segoe UI", Arial, sans-serif;
-            background-color: #f4f8fc;
-            margin: 0;
-            padding: 40px;
-            color: #333;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
 
-        header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: #f4f8fc;
+      margin: 0;
+      padding: 40px;
+      color: #333;
+    }
 
-        header h1 {
-            font-size: 2em;
-            margin: 0;
-            color: #1a3c6e;
-        }
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
 
-        header p {
-            font-size: 1.1em;
-            margin-top: 10px;
-            color: #444;
-            text-align: left;
-        }
+    header h1 {
+      font-size: 2em;
+      margin: 0;
+      color: #1a3c6e;
+    }
 
-        h2 {
-            text-align: center;
-            font-style: italic;
-            margin-bottom: 30px;
-            color: #1a3c6e;
-        }
+    header p {
+      font-size: 1.1em;
+      margin-top: 10px;
+      color: #444;
+      text-align: left;
+    }
 
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            justify-content: center;
-        }
+    h2 {
+      text-align: center;
+      font-style: italic;
+      margin-bottom: 30px;
+      color: #1a3c6e;
+    }
 
-        .project {
-            background-color: #fff;
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            text-align: center;
-            transition: transform 0.2s ease, box-shadow 0.3s ease;
-        }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      justify-content: center;
+    }
 
-        .project:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-        }
+    .project {
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+      padding-bottom: 20px;
+    }
 
-        .project img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-bottom: 2px solid #eaeaea;
-        }
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
 
-        .project h3 {
-            margin: 15px 0 10px 0;
-            font-size: 1.2em;
-            color: #1a3c6e;
-        }
+    .project img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-bottom: 2px solid #eaeaea;
+    }
 
-         .badge {
-            display: inline-block; 
-            background-color: white; /* Couleur Python officielle */
-            color: #444;
-            font-size: 0.65em;
-           
-            padding: 4px 10px;
-            border-radius: 8px;
-            margin-bottom: 10px;
-            margin-left: 5px;
-            border: 1px solid #444;
-            margin-left: 0;
+    .project h3 {
+      margin: 15px 0 10px 0;
+      font-size: 1.2em;
+      color: #1a3c6e;
+    }
 
-        }
-        .project .badge {
-    text-align: left;   /* pour le texte à l’intérieur */
-    margin: 0 0 10px 15px; /* espace sous le badge et léger décalage gauche */
-    display: inline-block; /* reste petit */
-    float: left; /* 🔹 force le badge à se coller à gauche du conteneur */
-}
+    /* 🔹 Style des deux boutons */
+    .btn-container {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
 
+    .btn {
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      font-size: 0.9em;
+      background-color: #1a3c6e;
+      color: white;
+      text-decoration: none;
+      transition: 0.2s ease;
+    }
 
-        .project p {
-            font-size: 0.95em;
-            padding: 0 15px 20px;
-            color: #555;
-        }
+    .btn:hover {
+      background-color: #274c8a;
+    }
 
-        @media (max-width: 900px) {
-            .projects {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
+    .project p {
+      font-size: 0.95em;
+      padding: 0 15px;
+      color: #555;
+    }
 
-        @media (max-width: 600px) {
-            .projects {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    @media (max-width: 900px) {
+      .projects {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .projects {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
 </head>
 <body>
 
 <header>
-    <h1>ROUSSEAU Nora</h1>
-    <p>Étudiante en Master 2 d'Économie de l’Entreprise et des Marchés à l'Université de Tours — future Data Analyst</p>
+  <h1>ROUSSEAU Nora</h1>
+  <p>Étudiante en Master 2</p>
 </header>
 
 <h2>Mes Projets Universitaires</h2>
 
 <div class="projects">
-    <div class="project">
-        <img src="images/image1.png" alt="Dashboard sur l'Offre culturelle en France">
-        <h3>Dashboard sur l'Offre culturelle en France</h3>
-        <p>Étude de la demande et des tendances du marché pour identifier des opportunités stratégiques.</p>
+
+  <!-- 🔹 PROJET 1 -->
+  <div class="project">
+    <img src="images/image1.png" alt="Dashboard sur l'Offre culturelle">
+    <h3>Dashboard sur l'Offre culturelle en France</h3>
+
+    <div class="btn-container">
+      <a class="btn" href="lien_vers_projet1.html" target="_blank">Voir le projet</a>
+      <a class="btn" href="lien_vers_code1.html" target="_blank">Voir le code</a>
     </div>
 
-    <div class="project">
-        <img src="images/image2.png" alt="Segmentations des départements français selon leur offre culturelle et leur contexte socio-économique">
-        <h3>Segmentation des départements français selon leur offre culturelle et leur contexte socio-économique</h3>
-        <p>Utilisation de modèles statistiques pour estimer les ventes futures et soutenir la prise de décision.</p>
+    <p>Étude de la demande et des tendances du marché pour identifier des opportunités stratégiques.</p>
+  </div>
+
+  <!-- 🔹 PROJET 2 -->
+  <div class="project">
+    <img src="images/image2.png" alt="Segmentation">
+    <h3>Segmentation des départements français</h3>
+
+    <div class="btn-container">
+      <a class="btn" href="lien_vers_projet2.html" target="_blank">Voir le projet</a>
+      <a class="btn" href="lien_vers_code2.html" target="_blank">Voir le code</a>
     </div>
 
-    <div class="project">
-        <img src="images/image3.png" alt="Analyse prédictive du rappel d’un candidat à partir de son CV">
-        <h3>Analyse prédictive du rappel d’un candidat à partir de son CV</h3>
-        <p>Analyse des stratégies des concurrents et évaluation de leur positionnement sur le marché.</p>
+    <p>Utilisation de modèles statistiques pour estimer les ventes futures et soutenir la prise de décision.</p>
+  </div>
+
+  <!-- 🔹 PROJET 3 -->
+  <div class="project">
+    <img src="images/image3.png" alt="Analyse prédictive CV">
+    <h3>Analyse prédictive du rappel d’un candidat</h3>
+
+    <div class="btn-container">
+      <a class="btn" href="lien_vers_projet3.html" target="_blank">Voir le projet</a>
+      <a class="btn" href="lien_vers_code3.html" target="_blank">Voir le code</a>
     </div>
 
-    <div class="project">
-        <img src="images/image4.png" alt="Optimisation du transport de marchandises">
-        <h3>Optimisation du transport de marchandises</h3>
-        <div class="badge">PYTHON</div>
-        <p>Application Python permettant de générer un plan de transport optimal en tenant compte des stocks, des demandes, des délais clients et des coûts de livraison.</p>
+    <p>Analyse des stratégies des concurrents et évaluation de leur positionnement sur le marché.</p>
+  </div>
+
+  <!-- 🔹 PROJET 4 -->
+  <div class="project">
+    <img src="images/image4.png" alt="Optimisation transport">
+    <h3>Optimisation du transport de marchandises</h3>
+
+    <div class="btn-container">
+      <a class="btn" href="lien_vers_projet4.html" target="_blank">Voir le projet</a>
+      <a class="btn" href="lien_vers_code4.html" target="_blank">Voir le code</a>
     </div>
 
-    <div class="project">
-        <img src="images/image5.png" alt="Impact du printemps arabe sur la participation au marché du travail chez les jeunes">
-        <h3>Impact du printemps arabe sur la participation au marché du travail chez les jeunes</h3>
-        <p>Nettoyage, traitement et interprétation de données issues de multiples sources économiques.</p>
+    <p>Application Python permettant de générer un plan de transport optimal.</p>
+  </div>
+
+  <!-- 🔹 PROJET 5 -->
+  <div class="project">
+    <img src="images/image5.png" alt="Printemps arabe">
+    <h3>Impact du printemps arabe</h3>
+
+    <div class="btn-container">
+      <a class="btn" href="lien_vers_projet5.html" target="_blank">Voir le projet</a>
+      <a class="btn" href="lien_vers_code5.html" target="_blank">Voir le code</a>
     </div>
 
-    <div class="project">
-        <img src="images/image6.png" alt="Impact des IDE sur la croissance économique en Afrique">
-        <h3>Impact des IDE sur la croissance économique en Afrique</h3>
-        <p>Évaluation de la satisfaction des clients et recommandations d’améliorations basées sur les retours.</p>
+    <p>Nettoyage, traitement et interprétation de données issues de multiples sources.</p>
+  </div>
+
+  <!-- 🔹 PROJET 6 -->
+  <div class="project">
+    <img src="images/image6.png" alt="IDE Afrique">
+    <h3>Impact des IDE sur la croissance économique</h3>
+
+    <div class="btn-container">
+      <a class="btn" href="lien_vers_projet6.html" target="_blank">Voir le projet</a>
+      <a class="btn" href="lien_vers_code6.html" target="_blank">Voir le code</a>
     </div>
+
+    <p>Évaluation de la satisfaction des clients et recommandations d’améliorations.</p>
+  </div>
 
 </div>
 
 </body>
 </html>
+
 
