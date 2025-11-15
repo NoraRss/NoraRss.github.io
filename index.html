@@ -10,7 +10,7 @@
       font-family: "Segoe UI", Arial, sans-serif;
       background-color: #f4f8fc;
       margin: 0;
-      padding: 0 0 40px 0; /* plus de padding horizontal pour que le header touche les bords */
+      padding: 0 40px 40px 40px; /* padding horizontal pour le reste de la page */
       color: #333;
     }
 
@@ -21,8 +21,11 @@
       padding: 30px 0; /* padding vertical uniquement */
       border-bottom-left-radius: 15px;
       border-bottom-right-radius: 15px;
-      margin: 0;
       box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+
+      width: 100vw; /* prend toute la largeur de la fenêtre */
+      margin-left: -40px; /* compense le padding du body */
+      margin-right: -40px;
     }
 
     .modern-header .header-content {
@@ -30,10 +33,9 @@
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
-      max-width: 1200px; /* centre le contenu sur grands écrans */
+      max-width: 1200px; /* contenu centré */
       margin: 0 auto;
-      width: 100%;
-      padding: 0 40px; /* padding intérieur pour que le texte/boutons ne touchent pas les bords */
+      padding: 0 40px; /* padding intérieur pour le texte et boutons */
       box-sizing: border-box;
     }
 
@@ -251,6 +253,5 @@
 
 </body>
 </html>
-
 
 
