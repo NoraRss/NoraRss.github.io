@@ -12,20 +12,20 @@
       margin: 0;
       padding: 0 40px 40px 40px; /* padding horizontal pour le reste de la page */
       color: #333;
+      box-sizing: border-box;
     }
 
-    /* 🔹 Header moderne full-width */
+    /* 🔹 Header moderne full-width sans scroll horizontal */
     .modern-header {
       background: linear-gradient(135deg, #1a3c6e, #274c8a);
       color: #fff;
-      padding: 30px 0; /* padding vertical uniquement */
+      padding: 30px 0; /* padding vertical */
       border-bottom-left-radius: 15px;
       border-bottom-right-radius: 15px;
       box-shadow: 0 6px 15px rgba(0,0,0,0.1);
 
-      width: 100vw; /* prend toute la largeur de la fenêtre */
-      margin-left: -40px; /* compense le padding du body */
-      margin-right: -40px;
+      width: 100%; /* prend toute la largeur disponible */
+      box-sizing: border-box; /* inclut padding si besoin */
     }
 
     .modern-header .header-content {
@@ -33,9 +33,9 @@
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
-      max-width: 1200px; /* contenu centré */
-      margin: 0 auto;
-      padding: 0 40px; /* padding intérieur pour le texte et boutons */
+      max-width: 1200px; /* centre le contenu */
+      margin: 0 auto; /* centré */
+      padding: 0 40px; /* padding interne pour le texte et boutons */
       box-sizing: border-box;
     }
 
