@@ -10,7 +10,7 @@
       font-family: "Segoe UI", Arial, sans-serif;
       background-color: #f4f8fc;
       margin: 0;
-      padding: 0 40px 40px 40px; /* padding horizontal et bas */
+      padding: 0 0 40px 0; /* plus de padding horizontal pour que le header touche les bords */
       color: #333;
     }
 
@@ -30,11 +30,11 @@
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
-      width: 100%; /* prend toute la largeur */
-      padding: 0 40px; /* marge intérieure sur les côtés */
-      box-sizing: border-box;
-      max-width: 1200px; /* pour centrer le contenu sur grand écran */
+      max-width: 1200px; /* centre le contenu sur grands écrans */
       margin: 0 auto;
+      width: 100%;
+      padding: 0 40px; /* padding intérieur pour que le texte/boutons ne touchent pas les bords */
+      box-sizing: border-box;
     }
 
     .modern-header h1 {
