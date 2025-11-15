@@ -14,24 +14,56 @@
       color: #333;
     }
 
-    header {
-      text-align: center;
+    /* 🔹 Header moderne */
+    .modern-header {
+      background: linear-gradient(135deg, #1a3c6e, #274c8a);
+      color: #fff;
+      padding: 30px 20px;
+      border-radius: 15px;
       margin-bottom: 50px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
     }
 
-    header h1 {
+    .modern-header .header-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .modern-header h1 {
       font-size: 2em;
       margin: 0;
-      color: #1a3c6e;
     }
 
-    header p {
+    .modern-header p {
+      margin: 5px 0 0 0;
       font-size: 1.1em;
-      margin-top: 10px;
-      color: #444;
-      text-align: left;
     }
 
+    .modern-header .header-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .modern-header .btn {
+      background-color: #fff;
+      color: #1a3c6e;
+      padding: 8px 16px;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .modern-header .btn:hover {
+      background-color: #e0e7f0;
+    }
+
+    /* 🔹 Titres et projets */
     h2 {
       text-align: center;
       font-style: italic;
@@ -74,7 +106,6 @@
       color: #1a3c6e;
     }
 
-    /* 🔹 Style des deux boutons */
     .btn-container {
       display: flex;
       justify-content: center;
@@ -82,19 +113,17 @@
       margin-bottom: 10px;
     }
 
-    .btn {
-      padding: 8px 14px;
-      border-radius: 8px;
-      border: none;
-      cursor: pointer;
-      font-size: 0.9em;
+    .btn-container .btn {
       background-color: #1a3c6e;
       color: white;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 0.9em;
       text-decoration: none;
       transition: 0.2s ease;
     }
 
-    .btn:hover {
+    .btn-container .btn:hover {
       background-color: #274c8a;
     }
 
@@ -110,6 +139,17 @@
       }
     }
 
+    @media (max-width: 700px) {
+      .modern-header .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .modern-header .header-links {
+        margin-top: 15px;
+      }
+    }
+
     @media (max-width: 600px) {
       .projects {
         grid-template-columns: 1fr;
@@ -120,9 +160,17 @@
 </head>
 <body>
 
-<header>
-  <h1>ROUSSEAU Nora</h1>
-  <p>Étudiante en Master 2</p>
+<header class="modern-header">
+  <div class="header-content">
+    <div class="header-info">
+      <h1>ROUSSEAU Nora</h1>
+      <p>Étudiante en Master 2 – future Data Analyst</p>
+    </div>
+    <div class="header-links">
+      <a class="btn" href="CV_Rousseau_Nora.pdf" target="_blank">Mon CV</a>
+      <a class="btn" href="https://www.linkedin.com/in/nora-rousseau" target="_blank">LinkedIn</a>
+    </div>
+  </div>
 </header>
 
 <h2>Mes Projets Universitaires</h2>
@@ -133,12 +181,10 @@
   <div class="project">
     <img src="images/image1.png" alt="Dashboard sur l'Offre culturelle">
     <h3>Dashboard sur l'Offre culturelle en France</h3>
-
     <div class="btn-container">
       <a class="btn" href="https://www.data.gouv.fr/reuses/analyse-de-loffre-culturelle-en-france/" target="_blank">Voir le projet</a>
       <a class="btn" href="projets/DASHBOARD ROUSSEAU Nora BOUDAMOUS Lyna.Rmd" target="_blank">Voir le code</a>
     </div>
-
     <p>Étude de la demande et des tendances du marché pour identifier des opportunités stratégiques.</p>
   </div>
 
@@ -146,12 +192,10 @@
   <div class="project">
     <img src="images/image2.png" alt="Segmentation">
     <h3>Segmentation des départements français</h3>
-
     <div class="btn-container">
       <a class="btn" href="projets/Projet_datamining2_Rousseau_Boudamous.pdf" target="_blank">Voir le projet</a>
       <a class="btn" href="projets/Projet_datamining2_Rousseau_Boudamous.Rmd" target="_blank">Voir le code</a>
     </div>
-
     <p>Utilisation de modèles statistiques pour estimer les ventes futures et soutenir la prise de décision.</p>
   </div>
 
@@ -159,12 +203,10 @@
   <div class="project">
     <img src="images/image3.png" alt="Analyse prédictive CV">
     <h3>Analyse prédictive du rappel d’un candidat</h3>
-
     <div class="btn-container">
       <a class="btn" href="projets/ROUSSEAU_BOUDAMOUS_projetClassif.pdf" target="_blank">Voir le projet</a>
       <a class="btn" href="projets/ROUSSEAU_BOUDAMOUS_projetClassif.Rmd" target="_blank">Voir le code</a>
     </div>
-
     <p>Analyse des stratégies des concurrents et évaluation de leur positionnement sur le marché.</p>
   </div>
 
@@ -172,12 +214,10 @@
   <div class="project">
     <img src="images/image4.png" alt="Optimisation transport">
     <h3>Optimisation du transport de marchandises</h3>
-
     <div class="btn-container">
       <a class="btn" href="lien_vers_projet4.html" target="_blank">Voir le projet</a>
       <a class="btn" href="projets/projet_transport.zip" target="_blank">Voir le code</a>
     </div>
-
     <p>Application Python permettant de générer un plan de transport optimal.</p>
   </div>
 
@@ -185,12 +225,10 @@
   <div class="project">
     <img src="images/image5.png" alt="Printemps arabe">
     <h3>Impact du printemps arabe</h3>
-
     <div class="btn-container">
       <a class="btn" href="projets/MEMOIRE_MECEN_2024_2025_ROUSSEAU_Nora.pdf" target="_blank">Voir le projet</a>
       <a class="btn" href="projets/MEMOIRE_MECEN_2024_2025_ROUSSEAU_Nora.Rmd" target="_blank">Voir le code</a>
     </div>
-
     <p>Nettoyage, traitement et interprétation de données issues de multiples sources.</p>
   </div>
 
@@ -198,12 +236,10 @@
   <div class="project">
     <img src="images/image6.png" alt="IDE Afrique">
     <h3>Impact des IDE sur la croissance économique</h3>
-
     <div class="btn-container">
       <a class="btn" href="projets/Projet_impact_ide_croissance_afrique.pdf" target="_blank">Voir le projet</a>
       <a class="btn" href="projets/Projet_impact_ide_croissance_afrique.Rmd" target="_blank">Voir le code</a>
     </div>
-
     <p>Évaluation de la satisfaction des clients et recommandations d’améliorations.</p>
   </div>
 
@@ -211,5 +247,6 @@
 
 </body>
 </html>
+
 
 
