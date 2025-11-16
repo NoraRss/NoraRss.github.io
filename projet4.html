@@ -34,10 +34,97 @@
   <h1>Optimisation du transport de marchandises</h1>
 
   <p>
-    Ce projet consiste à développer une application Python permettant de générer un plan de transport optimal 
-    en fonction des coûts, des capacités et des besoins à satisfaire.  
-    L’outil repose sur la programmation linéaire pour déterminer la solution minimisant le coût total 
-    tout en respectant l'ensemble des contraintes logistiques.
+Cette application répond à un besoin logistique réel : optimiser le transport de marchandises entre plusieurs entrepôts et clients en minimisant les coûts. Grâce à une interface simple et intuitive, elle utilise l’optimisation linéaire (scipy.optimize.linprog) pour générer automatiquement un plan de transport optimal, en tenant compte des stocks disponibles, des demandes clients et des coûts de livraison.
+
+En complément, l’interface utilisateur permet également de prendre en compte les délais de livraison : une option activable permet de respecter les délais maximums tolérés par chaque client. Une fenêtre dédiée permet de gérer précisément ces délais pour chaque couple entrepôt-client.
+
+L’objectif : proposer un outil complet, pratique et réaliste, qui intègre à la fois les contraintes économiques et temporelles du transport.
+
+
+
+Fonctionnalités clés :
+   - Optimisation linéaire 
+   - Modication de base de données (ajouter et ou enlever des clients et des entrepôts ainsi que modifier les valeurs présentes)
+   - Ajout d'une option délais de livraison avec possibilité de modification des délais
+   - Réinitilisation de la base de données transport.csv à son état d'origine possible en cas d'erreur
+   - Affichage des résultats sous forme de tableau : Client, Entrepôt associé, Quantité (en tonnes) vendus, Prix unitaire en $/T en fonction de l'entrepôt correspondant, Coût total par client, Délais de livraison adapté à la demande (en jours), Délai maximum accepté par le client (en jours)
+   -  Affichage en bas de la fenêtre : Coût total de tous les clients, Excédent des entrepôts ou Demandes non satisfaites
+
+
+
+Mode d'emploi :
+   - Executez main.py
+   - Lorsque la fenêtre s'ouvre un tableau avec le résultat d'une optimisation faite au démarrage s'affiche 
+   - Vous pouvez apercevoir plusieurs boutons : Gérer entrepôts, Gérer clients, Actualiser, Réinitialiser, et une case à cocher qui fait apparaitre le bouton Gérer les délais 
+
+
+Gérer entrepôts :
+- Ouvre une fenêtre dans laquelle vous pouvez gérer tous les entrepôts utilisés dans l'optimisation.
+- En haut à gauche, une liste déroulante permet de sélectionner un entrepôt pour consulter ou modifier son stock disponible.
+- À droite, vous pouvez modifier la quantité de stock de l'entrepôt sélectionné et appliquer la modification.
+- Une section plus bas permet de masquer un ou plusieurs entrepôts de la simulation (les entrepôts masqués sont ignorés dans le calcul).
+- Enfin, un bouton permet d’ajouter un nouvel entrepôt : une nouvelle fenêtre s’ouvre avec un formulaire, vous pouvez y renseigner le stock disponible de ce nouvel entrepôt.
+Pour chaque client, vous devez spécifier le coût et le délai de livraison.
+Des boutons permettent de simuler automatiquement les coûts et les délais tout en restant modifiable(valeurs aléatoires compris entre 1 et 5). Une fois tous les champs remplis, cliquez sur Ajouter pour enregistrer le nouvel entrepôt dans les fichiers.
+
+
+Gérer clients :
+- Ouvre une fenêtre dans laquelle vous pouvez gérer tous les clients utilisés dans l’optimisation.
+- En haut à gauche, une liste déroulante permet de sélectionner un client pour consulter ou modifier la quantité demandée.
+- À droite, vous pouvez modifier cette quantité et appliquer la modification.
+- Une section plus bas permet de masquer un ou plusieurs clients de la simulation (les clients masqués sont ignorés dans le calcul).
+- Enfin, un bouton permet d’ajouter un nouveau client : une nouvelle fenêtre s’ouvre avec un formulaire.
+Vous pouvez y renseigner le nom que vous voulez, la demande de ce client ainsi que le délai maximum accepté par ce dernier.
+Pour chaque entrepôt, vous devez spécifier le coût, le délai de livraison.
+Des boutons permettent de simuler automatiquement les coûts et les délais (valeurs aléatoires comprises entre 1 et 5)
+Une fois tous les champs remplis, cliquez sur Ajouter pour enregistrer le nouveau client dans les fichiers.
+
+
+Gérer délais :
+- Ouvre une fenêtre dans laquelle vous pouvez gérer tous les délais de livraison utilisés dans l’optimisation.
+- En haut, une section permet de modifier le délai de livraison entre un entrepôt et un client :
+Une liste déroulante permet de sélectionner un entrepôt.
+Une autre liste permet de sélectionner un client.
+Le champ à droite permet de modifier le délai de livraison (en jours) correspondant à la combinaison entrepôt-client selectionné.
+Cliquez sur Appliquer pour enregistrer la modification dans les données.
+- Une section en dessous permet de gérer les délais maximum acceptés par les clients :
+Sélectionnez un client dans la liste déroulante.
+Modifiez le délai maximal (en jours) que ce client accepte pour la livraison.
+Cliquez sur Modifier pour enregistrer cette valeur.
+Un bouton en bas de la fenêtre permet de fermer et enregistrer toutes les modifications dans les fichiers.
+
+
+- N'oubliez pas de cliquez sur le bouton Actualiser dans la fenêtre principale après chaque modification afin de relancer l'optimisation et ainsi de visualiser les nouveaux résultats. 
+
+- Cliquez sur le bouton Réinitialiser si vous voulez revenir au données d'origine.  
+
+
+
+Prérequis : 
+- Python 3.11
+- Bibliothèques : tkinter, pandas, numpy, scipy
+
+
+Structure du projet :
+projet_optimisation :
+ - Application : 
+     - main.py  
+     - optimisation.py  
+     - gerer_clients.py
+     - gerer_entrepots.py
+     - gerer_delais.py 
+     - transport.csv
+     - delais_livraison.csv
+ - Tests :
+     - main_logic.py
+     - client_logic.py
+     - entrepot_logic.py
+     - delais_logique.py
+     - test_entrepot_logic.py
+     - test_optimisation.py
+     - test_client_logic.py
+     - test_entrepot_logic.py
+     - test_delais.py
   </p>
 
 </body>
