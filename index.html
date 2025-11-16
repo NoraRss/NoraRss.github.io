@@ -10,66 +10,11 @@
       font-family: "Segoe UI", Arial, sans-serif;
       background-color: #f4f8fc;
       margin: 0;
-      padding: 0 40px 40px 40px; /* padding horizontal pour le reste de la page */
+      padding: 0 40px 40px 40px;
       color: #333;
       box-sizing: border-box;
     }
 
-    /* 🔹 Header moderne full-width sans scroll horizontal */
-    .modern-header {
-      background: linear-gradient(135deg, #1a3c6e, #274c8a);
-      color: #fff;
-      padding: 30px 0; /* padding vertical */
-      border-bottom-left-radius: 15px;
-      border-bottom-right-radius: 15px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-
-      width: 100%; /* prend toute la largeur disponible */
-      box-sizing: border-box; /* inclut padding si besoin */
-    }
-
-    .modern-header .header-content {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1200px; /* centre le contenu */
-      margin: 0 auto; /* centré */
-      padding: 0 40px; /* padding interne pour le texte et boutons */
-      box-sizing: border-box;
-    }
-
-    .modern-header h1 {
-      font-size: 2em;
-      margin: 0;
-    }
-
-    .modern-header p {
-      margin: 5px 0 0 0;
-      font-size: 1.1em;
-    }
-
-    .modern-header .header-links {
-      display: flex;
-      gap: 15px;
-      margin-top: 10px;
-    }
-
-    .modern-header .btn {
-      background-color: #fff;
-      color: #1a3c6e;
-      padding: 8px 16px;
-      font-weight: bold;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: 0.3s ease;
-    }
-
-    .modern-header .btn:hover {
-      background-color: #e0e7f0;
-    }
-
-    /* 🔹 Titres et projets */
     h2 {
       text-align: center;
       font-style: italic;
@@ -96,7 +41,7 @@
 
     .project:hover {
       transform: translateY(-5px);
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
     }
 
     .project img {
@@ -145,17 +90,6 @@
       }
     }
 
-    @media (max-width: 700px) {
-      .modern-header .header-content {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      
-      .modern-header .header-links {
-        margin-top: 15px;
-      }
-    }
-
     @media (max-width: 600px) {
       .projects {
         grid-template-columns: 1fr;
@@ -164,20 +98,20 @@
   </style>
 
 </head>
+
 <body>
 
-<header class="modern-header">
-  <div class="header-content">
-    <div class="header-info">
-      <h1>ROUSSEAU Nora</h1>
-      <p>Étudiante en Master 2 d'Économie de l’Entreprise et des Marchés à l'Université de Tours — future Data Analyst</p>
-    </div>
-    <div class="header-links">
-      <a class="btn" href="projets/CV_STAGE_Rousseau_Nora.pdf" target="_blank">Mon CV</a>
-      <a class="btn" href="https://www.linkedin.com/in/nora-rousseau-5b8589388/" target="_blank">LinkedIn</a>
-    </div>
-  </div>
-</header>
+<!-- IMPORTATION DU HEADER -->
+<div id="header-placeholder"></div>
+
+<script>
+fetch("header.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("header-placeholder").innerHTML = html;
+  });
+</script>
+
 
 <h2>Mes Projets Universitaires</h2>
 
@@ -185,94 +119,71 @@
 
   <!-- 🔹 PROJET 1 -->
   <div class="project">
-    <img src="images/image1.png" alt="Dashboard sur l'Offre culturelle">
+    <img src="images/image1.png" alt="">
     <h3>Dashboard sur l'Offre culturelle en France</h3>
     <div class="btn-container">
       <a class="btn" href="https://www.data.gouv.fr/reuses/analyse-de-loffre-culturelle-en-france/" target="_blank">Voir le projet</a>
       <a class="btn" href="projets/DASHBOARD ROUSSEAU Nora BOUDAMOUS Lyna.Rmd" target="_blank">Voir le code</a>
     </div>
-    <p>Étude de la demande et des tendances du marché pour identifier des opportunités stratégiques.</p>
+    <p>Étude de la demande et des tendances du marché.</p>
   </div>
 
   <!-- 🔹 PROJET 2 -->
   <div class="project">
-    <img src="images/image2.png" alt="Segmentation">
-    <h3>Segmentations des départements français selon leur offre culturelle</h3>
+    <img src="images/image2.png" alt="">
+    <h3>Segmentation des départements français</h3>
     <div class="btn-container">
       <a class="btn" href="projets/Projet_datamining2_Rousseau_Boudamous.pdf" target="_blank">Voir le projet</a>
       <a class="btn" href="projets/Projet_datamining2_Rousseau_Boudamous.Rmd" target="_blank">Voir le code</a>
     </div>
-    <p>Utilisation de modèles statistiques pour estimer les ventes futures et soutenir la prise de décision.</p>
+    <p>Analyse statistique avancée.</p>
   </div>
 
   <!-- 🔹 PROJET 3 -->
   <div class="project">
-    <img src="images/image3.png" alt="Analyse prédictive CV">
-    <h3>Analyse prédictive du rappel d’un candidat à partir de son CV</h3>
+    <img src="images/image3.png" alt="">
+    <h3>Analyse prédictive du rappel d’un CV</h3>
     <div class="btn-container">
       <a class="btn" href="projets/ROUSSEAU_BOUDAMOUS_projetClassif.pdf" target="_blank">Voir le projet</a>
       <a class="btn" href="projets/ROUSSEAU_BOUDAMOUS_projetClassif.Rmd" target="_blank">Voir le code</a>
     </div>
-    <p>Analyse des stratégies des concurrents et évaluation de leur positionnement sur le marché.</p>
+    <p>Predictions avec modèles ML.</p>
   </div>
 
   <!-- 🔹 PROJET 4 -->
   <div class="project">
-    <img src="images/image41.png" alt="Optimisation transport">
+    <img src="images/image41.png" alt="">
     <h3>Optimisation du transport de marchandises</h3>
     <div class="btn-container">
-      <a class="btn" href="#" onclick="loadProject('projet4.html')">Voir le projet</a>
+      <a class="btn" href="projet4.html">Voir le projet</a>
       <a class="btn" href="projets/projet_transport.zip" target="_blank">Voir le code</a>
     </div>
-    <p>Application Python permettant de générer un plan de transport optimal.</p>
+    <p>Application Python générant un plan de transport optimal.</p>
   </div>
 
   <!-- 🔹 PROJET 5 -->
   <div class="project">
-    <img src="images/image5.png" alt="Printemps arabe">
-    <h3>Impact du printemps arabe sur la participation au marché du travail chez les jeunes</h3>
+    <img src="images/image5.png" alt="">
+    <h3>Impact du printemps arabe</h3>
     <div class="btn-container">
       <a class="btn" href="projets/MEMOIRE_MECEN_2024_2025_ROUSSEAU_Nora.pdf" target="_blank">Voir le projet</a>
       <a class="btn" href="projets/MEMOIRE_MECEN_2024_2025_ROUSSEAU_Nora.Rmd" target="_blank">Voir le code</a>
     </div>
-    <p>Nettoyage, traitement et interprétation de données issues de multiples sources.</p>
+    <p>Analyse économique approfondie.</p>
   </div>
 
   <!-- 🔹 PROJET 6 -->
   <div class="project">
-    <img src="images/image66.png" alt="IDE Afrique">
-    <h3>Impact des IDE sur la croissance économique en Afrique</h3>
+    <img src="images/image66.png" alt="">
+    <h3>Impact des IDE sur la croissance</h3>
     <div class="btn-container">
       <a class="btn" href="projets/Projet_impact_ide_croissance_afrique.pdf" target="_blank">Voir le projet</a>
       <a class="btn" href="projets/Projet_impact_ide_croissance_afrique.Rmd" target="_blank">Voir le code</a>
     </div>
-    <p>Évaluation de la satisfaction des clients et recommandations d’améliorations.</p>
+    <p>Étude macroéconomique.</p>
   </div>
 
 </div>
-
-  <div id="project-container"
-     style="
-        max-width: 1000px;
-        margin: 40px auto;
-        background: white;
-        padding: 20px;
-        border-radius: 15px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-     ">
-</div>
-
-  <script>
-function loadProject(page) {
-  // Charger le contenu dans l'iframe
-  document.getElementById("project-container").innerHTML =
-    `<iframe src="${page}" style="width:100%; height:1200px; border:none;"></iframe>`;
-    
-  // Empêcher le scroll vers le haut
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-</script>
-
 
 </body>
 </html>
