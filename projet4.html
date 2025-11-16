@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Optimisation du transport</title>
+  <title>Optimisation du transport de marchandises</title>
 
   <style>
     body {
@@ -50,9 +50,8 @@
 
 <body>
 
-<!-- Import du header -->
+<!-- Import du header (bannière identique à la page d’accueil) -->
 <div id="header-placeholder"></div>
-
 <script>
 fetch("header.html")
   .then(response => response.text())
@@ -61,13 +60,142 @@ fetch("header.html")
   });
 </script>
 
-<h1>Optimisation du transport de marchandises</h1>
+<!-- TITRE DU PROJET -->
+<h1 class="project-title">Optimisation du transport de marchandises</h1>
 
-<p>
-  Cette application répond à un besoin logistique réel : optimiser le transport de marchandises...
-</p>
+<!-- CONTENU DETAILLE DU PROJET -->
+<div class="project-content">
+  <p>
+    Cette application répond à un besoin logistique réel : optimiser le transport de marchandises entre plusieurs
+    entrepôts et clients en minimisant les coûts. Grâce à une interface simple et intuitive,
+    elle utilise l’optimisation linéaire (<strong>scipy.optimize.linprog</strong>) pour générer automatiquement un plan de transport optimal,
+    en tenant compte des stocks disponibles, des demandes clients et des coûts de livraison.
+  </p>
 
-<!-- (TON TEXTE COMPLET DU PROJET ICI, tel que tu l’avais écrit) -->
+  <p>
+    En complément, l’interface utilisateur permet également de prendre en compte les <strong>délais de livraison</strong> :
+    une option activable garantit le respect des délais maximums tolérés par chaque client.
+    Une fenêtre dédiée permet de gérer précisément ces délais pour chaque couple entrepôt–client.
+  </p>
+
+  <p>
+    <strong>Objectif :</strong> proposer un outil complet, pratique et réaliste, qui intègre à la fois
+    les contraintes économiques et temporelles du transport.
+  </p>
+
+  <hr>
+
+  <h2>Fonctionnalités clés</h2>
+  <ul>
+    <li>Optimisation linéaire des transports.</li>
+    <li>Modification de la base de données : ajout/suppression de clients et d’entrepôts, modification des valeurs existantes.</li>
+    <li>Option “délais de livraison” avec possibilité de modification des délais.</li>
+    <li>Réinitialisation de la base <strong>transport.csv</strong> à son état d’origine.</li>
+    <li>
+      Affichage des résultats sous forme de tableau : Client, Entrepôt associé, Quantité (T), Prix unitaire ($/T),
+      Coût total par client, Délai de livraison prévu, Délai maximal accepté.
+    </li>
+    <li>Affichage du coût total, des excédents d’entrepôts ou des demandes non satisfaites.</li>
+  </ul>
+
+  <hr>
+
+  <h2>Mode d'emploi</h2>
+  <ul>
+    <li>Exécutez <strong>main.py</strong>.</li>
+    <li>Une optimisation automatique s'effectue au démarrage : un tableau de résultats s’affiche.</li>
+    <li>
+      Plusieurs boutons sont disponibles :
+      <strong>Gérer entrepôts</strong>, <strong>Gérer clients</strong>, <strong>Actualiser</strong>,
+      <strong>Réinitialiser</strong>, et une case à cocher pour afficher <strong>Gérer les délais</strong>.
+    </li>
+  </ul>
+
+  <hr>
+
+  <h2>Gérer les entrepôts</h2>
+  <ul>
+    <li>Affiche une fenêtre dédiée pour modifier ou consulter les entrepôts.</li>
+    <li>Une liste déroulante permet de sélectionner un entrepôt et d'ajuster son stock.</li>
+    <li>Possibilité de masquer un ou plusieurs entrepôts (exclus du calcul).</li>
+    <li>
+      Ajout d’un nouvel entrepôt via un formulaire.  
+      Coût et délai de livraison doivent être spécifiés pour chaque client.
+    </li>
+    <li>
+      Des boutons permettent de générer automatiquement des coûts et délais (valeurs aléatoires entre 1 et 5).
+    </li>
+  </ul>
+
+  <hr>
+
+  <h2>Gérer les clients</h2>
+  <ul>
+    <li>Fenêtre permettant de modifier ou consulter chaque client.</li>
+    <li>Modification de la demande du client via la zone de droite.</li>
+    <li>Possibilité de masquer un ou plusieurs clients.</li>
+    <li>
+      Ajout d’un nouveau client via un formulaire : nom, demande et délai maximal accepté.
+    </li>
+    <li>
+      Coûts et délais doivent être spécifiés pour chaque entrepôt (génération automatique possible).
+    </li>
+  </ul>
+
+  <hr>
+
+  <h2>Gérer les délais</h2>
+  <ul>
+    <li>
+      Permet de modifier les délais de livraison entre un entrepôt et un client (sélection via deux listes déroulantes).
+    </li>
+    <li>
+      Une section séparée permet d’ajuster les délais maximaux acceptés par chaque client.
+    </li>
+    <li>Un bouton permet d’enregistrer toutes les modifications.</li>
+  </ul>
+
+  <p><strong>Important :</strong></p>
+  <ul>
+    <li>Cliquer sur <strong>Actualiser</strong> après chaque modification pour relancer l’optimisation.</li>
+    <li>Cliquer sur <strong>Réinitialiser</strong> pour revenir aux données d’origine.</li>
+  </ul>
+
+  <hr>
+
+  <h2>Prérequis</h2>
+  <ul>
+    <li>Python 3.11</li>
+    <li>Bibliothèques : tkinter, pandas, numpy, scipy</li>
+  </ul>
+
+  <hr>
+
+  <h2>Structure du projet</h2>
+  <pre>
+projet_optimisation
+│
+├── Application
+│   ├── main.py
+│   ├── optimisation.py
+│   ├── gerer_clients.py
+│   ├── gerer_entrepots.py
+│   ├── gerer_delais.py
+│   ├── transport.csv
+│   └── delais_livraison.csv
+│
+└── Tests
+    ├── main_logic.py
+    ├── client_logic.py
+    ├── entrepot_logic.py
+    ├── delais_logique.py
+    ├── test_entrepot_logic.py
+    ├── test_optimisation.py
+    ├── test_client_logic.py
+    ├── test_delais.py
+  </pre>
+
+</div>
 
 </body>
 </html>
